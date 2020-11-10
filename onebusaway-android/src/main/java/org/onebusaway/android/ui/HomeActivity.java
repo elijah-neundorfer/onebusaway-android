@@ -112,6 +112,7 @@ import static org.onebusaway.android.ui.NavigationDrawerFragment.NAVDRAWER_ITEM_
 import static org.onebusaway.android.ui.NavigationDrawerFragment.NAVDRAWER_ITEM_PAY_FARE;
 import static org.onebusaway.android.ui.NavigationDrawerFragment.NAVDRAWER_ITEM_PINS;
 import static org.onebusaway.android.ui.NavigationDrawerFragment.NAVDRAWER_ITEM_PLAN_TRIP;
+import static org.onebusaway.android.ui.NavigationDrawerFragment.NAVDRAWER_ITEM_PRIVACY_BEHAVIOR;
 import static org.onebusaway.android.ui.NavigationDrawerFragment.NAVDRAWER_ITEM_PROFILE;
 import static org.onebusaway.android.ui.NavigationDrawerFragment.NAVDRAWER_ITEM_SEND_FEEDBACK;
 import static org.onebusaway.android.ui.NavigationDrawerFragment.NAVDRAWER_ITEM_SETTINGS;
@@ -583,6 +584,10 @@ public class HomeActivity extends AppCompatActivity
                 Intent i = new Intent(Intent.ACTION_VIEW);
                 i.setData(Uri.parse(getString(R.string.open_source_github)));
                 startActivity(i);
+                break;
+            case NAVDRAWER_ITEM_PRIVACY_BEHAVIOR:
+                Intent privacyBehavior = new Intent(HomeActivity.this, ClearCommEndUserPrivacyUI.class);
+                startActivity(privacyBehavior);
                 break;
         }
         invalidateOptionsMenu();
